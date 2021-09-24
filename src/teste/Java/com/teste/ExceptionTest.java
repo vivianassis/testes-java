@@ -31,14 +31,9 @@ public class ExceptionTest {
 	}
 	*/
 	
-	@Test
-	public void testExceptionMessage() {
-	    try {
-	        new ArrayList<Object>().get(0);
-	        fail("Esperado que IndexOutOfBoundsException seja lançada");
-	    } catch (IndexOutOfBoundsException ex) {
-	        //assertThat(ex.getMessage(),("Index: 0, Size: 0"));
-	    }
+	@Test(expected = IndexOutOfBoundsException.class)
+	public void shouldThrowsIndexOutBoundsException() {
+	        new ArrayList<>().get(0);
 	}
 	
 }
